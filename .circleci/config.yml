@@ -6,8 +6,12 @@ jobs:
       - image: cimg/base:current
     steps:
       - checkout
-      - run: echo "Build succeeded"
-      - run: echo "X = ${X:-no}"
+      - run:
+          name: "Build test"
+          command: "echo Build succeeded"
+      - run:
+          name: "Check secrets"
+          command: "echo X = ${X:-no}"
 
 workflows:
   main:
